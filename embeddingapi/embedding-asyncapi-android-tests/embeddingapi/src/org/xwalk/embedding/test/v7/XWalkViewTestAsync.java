@@ -13,7 +13,7 @@ import android.annotation.SuppressLint;
 import android.test.suitebuilder.annotation.SmallTest;
 
 @SuppressLint("NewApi")
-public class XWalkViewTestAsnyc extends XWalkViewTestBase {
+public class XWalkViewTestAsync extends XWalkViewTestBase {
 
     @Override
     public void setUp() throws Exception {
@@ -168,6 +168,26 @@ public class XWalkViewTestAsnyc extends XWalkViewTestBase {
             assertTrue(false);
             e.printStackTrace();
         } catch (Throwable e) {
+            assertTrue(false);
+        }
+    }
+
+    @SmallTest
+    public void testGetCompositingSurfaceTypeSurface() {
+        try {
+            assertEquals(SURFACE_VIEW, getBackendTypeOnUiThread(mXWalkView));
+        } catch (Exception e) {
+            e.printStackTrace();
+            assertTrue(false);
+        }
+    }
+
+    @SmallTest
+    public void testGetCompositingSurfaceTypeTexture() {
+        try {
+            assertEquals(TEXTURE_VIEW, getBackendTypeOnUiThread(mXWalkViewTexture));
+        } catch (Exception e) {
+            e.printStackTrace();
             assertTrue(false);
         }
     }
