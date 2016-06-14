@@ -1525,7 +1525,8 @@ public class XWalkViewTestBase extends ActivityInstrumentationTestCase2<MainActi
         return runTestOnUiThreadAndGetResult(new Callable<String>() {
             @Override
             public String call() throws Exception {
-                return view.getCompositingSurfaceType();
+                //return view.getCompositingSurfaceType();
+                return "";
             }
         });
     }
